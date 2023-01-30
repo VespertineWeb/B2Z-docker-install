@@ -1,6 +1,6 @@
 # B2Z-docker-install
 
-USER: 🧑‍💻
+USER: 👩🏼‍💻
 ```bash
 sudo adduser deploy
 sudo usermod -aG sudo deploy
