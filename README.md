@@ -1,5 +1,9 @@
 # B2Z-docker-install
 
+```bash
+sudo apt -y update && apt -y upgrade
+```
+
 USER: 👩🏼‍💻
 ```bash
 sudo adduser deploy
