@@ -4,7 +4,7 @@
 sudo apt -y update && apt -y upgrade
 ```
 
-USER: 👩🏼‍💻
+USER: 🐳💻
 ```bash
 sudo adduser deploy
 sudo usermod -aG sudo deploy
