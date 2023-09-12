@@ -11,7 +11,7 @@ get_mysql_root_password() {
 get_link_git() {
   
   print_banner
-  printf "${WHITE} 💻 Insira o link do GITHUB do seu B2Z que deseja instalar:${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Insira o link do Github da sua instalação que deseja instalar:${GRAY_LIGHT}"
   printf "\n\n"
   read -p "> " link_git
 }
@@ -201,14 +201,14 @@ software_dominio() {
 inquiry_options() {
   
   print_banner
-  printf "${WHITE} 💻 Bem vindo(a) ao Gerenciador B2Z, Selecione abaixo a proxima ação!${GRAY_LIGHT}"
+  printf "${WHITE} 💻 Bem vindo(a), selecione abaixo a proxima ação!${GRAY_LIGHT}"
   printf "\n\n"
-  printf "   [0] Instalar B2Z\n"
-  printf "   [1] Atualizar B2Z\n"
-  printf "   [2] Deletar B2Z\n"
-  printf "   [3] Bloquear B2Z\n"
-  printf "   [4] Desbloquear B2Z\n"
-  printf "   [5] Alter. dominio B2Z\n"
+  printf "   [0] ☕ Instalar Sistema\n"
+  printf "   [1] 🔂 Atualizar Sistema\n"
+  printf "   [2] ❌ Deletar Sistema\n"
+  printf "   [3] 🟥 Bloquear Sistema\n"
+  printf "   [4] 🟩 Desbloquear Sistema\n"
+  printf "   [5] 🔓 Alter. dominio Sistema\n"
   printf "\n"
   read -p "> " option
 
