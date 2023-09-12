@@ -1,4 +1,4 @@
-# B2Z-docker-install
+# Vespertineweb-docker-install
 
 ```bash
 sudo apt -y update && apt -y upgrade
@@ -20,4 +20,10 @@ NEW INSTANCE INSTALL: 🐵
 ```bash
 cd && cd ./install && sudo ./install_instancia
 ```
+## Requisitos
 
+| --- | Mínimo | Recomendado |
+| --- | --- | --- |
+| Node JS | 14.x | 16.x |
+| Ubuntu | 18.x | 20.x |
+| Memória RAM | 2Gb | 4Gb |  
