@@ -18,8 +18,8 @@ backend_redis_create() {
   docker run --name redis-${instancia_add} -p ${redis_port}:6379 --restart always --detach redis redis-server --requirepass ${mysql_root_password}
   
   sleep 2
-  sudo su - postgres
-  createdb ${instancia_add};
+  sudo su - postgres <<EOF
+    createdb ${instancia_add};
   psql
   CREATE USER ${instancia_add} SUPERUSER INHERIT CREATEDB CREATEROLE;
   ALTER USER ${instancia_add} PASSWORD '${mysql_root_password}';
@@ -63,6 +63,7 @@ PORT=${backend_port}
 
 DB_HOST=localhost
 DB_DIALECT=postgres
+DB_PORT=5432
 DB_USER=${instancia_add}
 DB_PASS=${mysql_root_password}
 DB_NAME=${instancia_add}
@@ -141,7 +142,7 @@ backend_update() {
   pm2 stop ${empresa_atualizar}-backend
   git pull
   cd /home/deploy/${empresa_atualizar}/backend
-  npm install
+  npm install --force
   npm update -f
   npm install @types/fs-extra
   rm -rf dist 
@@ -210,7 +211,8 @@ backend_start_pm2() {
 
   sudo su - deploy <<EOF
   cd /home/deploy/${instancia_add}/backend
-  pm2 start dist/server.js --name ${instancia_add}-backend
+  sudo pm2 start dist/server.js --name ${instancia_add}-backend
+  sudo pm2 save --force
 EOF
 
   sleep 2
