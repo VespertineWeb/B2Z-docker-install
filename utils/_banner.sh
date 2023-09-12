@@ -23,7 +23,7 @@ print_banner() {
 
 printf "${GREEN}";
  
-printf "░ B2Z Vespertineweb ░\n";
+printf "░ Vespertineweb ░\n";
   
   printf "${NC}";
 
