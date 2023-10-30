@@ -19,7 +19,7 @@ backend_redis_create() {
   
   sleep 2
   sudo su - postgres <<EOF
-    createdb ${instancia_add};
+  createdb ${instancia_add};
   psql
   CREATE USER ${instancia_add} SUPERUSER INHERIT CREATEDB CREATEROLE;
   ALTER USER ${instancia_add} PASSWORD '${mysql_root_password}';
@@ -64,6 +64,7 @@ PORT=${backend_port}
 DB_HOST=localhost
 DB_DIALECT=postgres
 DB_PORT=5432
+DB_TIMEZONE=-03:00
 DB_USER=${instancia_add}
 DB_PASS=${mysql_root_password}
 DB_NAME=${instancia_add}
@@ -142,7 +143,7 @@ backend_update() {
   pm2 stop ${empresa_atualizar}-backend
   git pull
   cd /home/deploy/${empresa_atualizar}/backend
-  npm install --force
+  npm install
   npm update -f
   npm install @types/fs-extra
   rm -rf dist 
@@ -211,8 +212,8 @@ backend_start_pm2() {
 
   sudo su - deploy <<EOF
   cd /home/deploy/${instancia_add}/backend
-  sudo pm2 start dist/server.js --name ${instancia_add}-backend
-  sudo pm2 save --force
+  pm2 start dist/server.js --name ${instancia_add}-backend
+  pm2 save
 EOF
 
   sleep 2

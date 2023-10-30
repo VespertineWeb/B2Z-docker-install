@@ -206,8 +206,8 @@ inquiry_options() {
   printf "   [0] ☕ Instalar Sistema\n"
   printf "   [1] 🔂 Atualizar Sistema\n"
   printf "   [2] ❌ Deletar Sistema\n"
-  printf "   [3] 🟥 Bloquear Sistema\n"
-  printf "   [4] 🟩 Desbloquear Sistema\n"
+  printf "   [3] 🚫 Bloquear Sistema\n"
+  printf "   [4] 🆗 Desbloquear Sistema\n"
   printf "   [5] 🔓 Alter. dominio Sistema\n"
   printf "\n"
   read -p "> " option
